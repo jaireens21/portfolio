@@ -37,16 +37,7 @@ nav li{
   margin:0.5rem;
   padding:0;
 }
-#readMoreBtn{
-  box-shadow: none;
-  background-color: var(--main-red);
-  color:white;
-  border:none;
-  padding:0.4rem;
-  border-radius: 3px;
-  z-index: 1;
-  cursor: pointer;
-}
+
 
 .white{
   color:white;
@@ -183,9 +174,11 @@ nav li{
 #aboutSection{
   margin:0;
   padding:0;
-  border: none;;
+  border: none;
   background-color:var(--main-blue);
   color: white;
+  max-height: fit-content;
+  overflow:scroll;
 }
 #aboutText{
   margin:0;
@@ -204,17 +197,26 @@ nav li{
 }
 
 .expandable{
-  display:block;
   opacity:0;
-  height:0;
-  transition: all 2s linear;
+  max-height:0px;
+  pointer-events: none;
+  transition: all 1s linear;
 }
 .expandable-open{
-  display:block;
-  height:auto;
   opacity:1;
+  height:auto;
+  max-height:50rem;
 }
-
+#readMoreBtn{
+  box-shadow: none;
+  background-color: var(--main-red);
+  color:white;
+  border:none;
+  padding:0.4rem;
+  border-radius: 3px;
+  z-index: 1000;
+  cursor: pointer;
+}
 #skillSection{
   margin:0;
   padding:0;
