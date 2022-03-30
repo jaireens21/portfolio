@@ -1,12 +1,13 @@
 :root {
   --main-red: #be3144;
-  --main-blue: #45567d;
+  --main-blue: #212F3D;
   --main-gray: #303841;
 }
  
 body{
   margin:0; 
   padding:0;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 a{
@@ -36,17 +37,27 @@ nav li{
   margin:0.5rem;
   padding:0;
 }
+#readMoreBtn{
+  box-shadow: none;
+  background-color: var(--main-red);
+  color:white;
+  border:none;
+  padding:0.4rem;
+  border-radius: 3px;
+  z-index: 1;
+  cursor: pointer;
+}
 
 .white{
   color:white;
 }
 
-.button{
+.navbutton{
   padding:0.5rem;
   border:1px solid transparent;
 }
 
-.button:hover{
+.navbutton:hover{
   background-color:var(--main-gray); 
   border:1px solid var(--main-gray);
   transition:border 0.01s, background-color 0.7s;
@@ -60,12 +71,16 @@ nav li{
   justify-content:center;
   color:var(--main-red);
   background-color:black;
-  background-image: linear-gradient(62deg, #9a9da0 0%, rgb(80, 78, 78) 20%, #181719 100%);
+  background-image: linear-gradient(45deg, black 0%, #181719 25%,#212F3D 50%,rgb(80, 78, 78) 100%);
   height:100vh;
   margin:0; 
   padding:0;
 }
-
+#nameDiv{
+  margin-bottom: 5rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
 .path {
   animation: draw 10s forwards;
 }
@@ -183,11 +198,21 @@ nav li{
   text-transform: uppercase;
   font-size:1.5rem;
 }
+
 .hidden{
   display:none;
 }
-.aboutText p{
-  transition: all 2s ease-in;
+
+.expandable{
+  display:block;
+  opacity:0;
+  height:0;
+  transition: all 2s linear;
+}
+.expandable-open{
+  display:block;
+  height:auto;
+  opacity:1;
 }
 
 #skillSection{
@@ -299,14 +324,14 @@ nav li{
   margin-bottom:4rem; 
   font-style:italic;
 }
-.pbutton{
+.profilebutton{
   display:inline-block; 
   margin:1.25rem 1.2rem;
   color:white; 
   font-size:1.2rem;
 }
 
-.pbutton:hover {
+.profilebutton:hover {
   transform: translateY(-1rem) scale(1.5);
   transition: transform 1s;
 }
@@ -324,17 +349,23 @@ footer p{
 }
 
 @media(max-width:450px)
-{ #workSection img{
+{ 
+  #welcomeSection{
+    height:60vh;
+  }
+  #workSection img{
     max-width:300px; 
     max-height:300px; 
-  }
-  nav li{
-    margin:0;
   }
   nav ul{
     justify-content:center;
   }
+  nav li{
+    margin-left:0;
+    margin-right:0.2rem;
+  }
   #skillLists ul{
     flex:50%;
   }
+  
 }
