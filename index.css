@@ -25,7 +25,6 @@ nav{
   font-size:1.5rem;
 }
 nav ul{
-  list-style:none; 
   margin:0;
   padding:0;
   display:flex;
@@ -34,6 +33,7 @@ nav ul{
 }
 
 nav li{
+  list-style:none;
   margin:0.5rem;
   padding:0;
 }
@@ -62,7 +62,7 @@ nav li{
   justify-content:center;
   color:var(--main-red);
   background-color:black;
-  background-image: linear-gradient(45deg, black 0%, #181719 25%,#212F3D 50%,rgb(80, 78, 78) 100%);
+  background-image: linear-gradient(45deg, black 0%, #181719 25%,#212F3D 50%,#504E4E 100%);
   height:100vh;
   margin:0; 
   padding:0;
@@ -74,10 +74,12 @@ nav li{
 }
 .path {
   animation: draw 10s forwards;
+  /* forwards so that the final state remains how the animation ends. */
 }
 @keyframes draw {
   to {
     stroke-dashoffset: 0;
+    /* The stroke-dashoffset property defines the location along an SVG path where the dash of a stroke will begin. The higher the offset, the further along the path the dashes will begin. We start with a very high offset & then bring it to zero to animate as if the path is being drawn */
   }
 }
 
@@ -89,14 +91,15 @@ nav li{
   font-style:italic; 
   font-size:1.5rem;
   font-weight: 700;
-  overflow: hidden;
-  border-right: .3rem solid white;
-  white-space: nowrap;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .3rem solid white; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
   letter-spacing: .5rem;
-  margin: 0 auto;
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
   animation: 
     typing 3.5s steps(30, end),
-    blink-caret 0.5s step-end infinite;
+    blink-cursor 0.5s step-end infinite;
+    /* step-end is same as steps(1,end). End means that last jump will happen when the animation ends */
 }
 /* typing effect */
 @keyframes typing {
@@ -104,7 +107,7 @@ nav li{
   to { width: 100% }
 }
 /* typewriter cursor effect */
-@keyframes blink-caret {
+@keyframes blink-cursor {
   from, to { border-color: transparent }
   50% { border-color: white }
   
@@ -117,13 +120,12 @@ nav li{
   animation: flyUp 13s linear infinite;
 }
 .squares li:nth-child(1){
-  left: 25%;
+  left: 15%; /* % of parent's width */
   width: 80px;
   height: 80px;
-  
 }
 .squares li:nth-child(2) {
-  left: 10%;
+  left: 30%;
   width: 20px;
   height: 20px;
   opacity: 0;
@@ -159,10 +161,10 @@ nav li{
 @keyframes flyUp{
   0% {
   opacity: 0;
-  border-radius: 10%;
+  border-radius: 3px;
   transform: translateY(200px) rotate(0deg);
   }
-  50% {
+  30% {
   opacity: 0.5;
   }
   100% {
@@ -198,7 +200,7 @@ nav li{
 .expandable{
   opacity:0;
   max-height:0px;
-  pointer-events: none;
+  pointer-events: none; /* so that we cannot click on the hiddden text & can easily click on the ReadMore button */
   transition: all 0.5s ease-in-out;
 }
 .expandable-open{
@@ -244,8 +246,44 @@ nav li{
   text-align: center;
   border-left:4px solid var(--main-red);
   line-height: 1.7rem;
-  flex:25%;
+  flex:1 1 25%; 
+  /* flex-grow/shrink/basis. Flex-direction is ROW so flex-basis  is setting the initial WIDTH of flex-item as 25% of parent */
 }
+#skillLists ul:nth-child(1){
+  animation: animateList1 2s linear ;
+}
+@keyframes animateList1 {
+  from{
+    transform:translateX(-50%); 
+    /* percentage of ITSELF along the specified axis i.e. ul's 'width' in this case */
+  }
+  to{
+    transform: translateX(0);
+  }
+}
+#skillLists ul:nth-child(2){
+  animation: animateList2 2s linear ;
+}
+@keyframes animateList2 {
+  from{
+    transform:translateY(50%);
+  }
+  to{
+    transform: translateY(0);
+  }
+}
+#skillLists ul:nth-child(3){
+  animation: animateList3 2s linear ;
+}
+@keyframes animateList3 {
+  from{
+    transform:translateX(50%);
+  }
+  to{
+    transform: translateX(0);
+  }
+}
+
 .skillType{
   text-transform: uppercase;
   font-size: 1.3rem;
@@ -255,12 +293,12 @@ nav li{
   background-color:var(--main-blue); 
   margin:0; 
   padding:0;
+  color:white;
 }
 #work{
   margin:0;
   padding:3rem;
   text-align:center; 
-  color:white;
 }
 #work h2{
   text-align: left;
@@ -282,14 +320,14 @@ nav li{
   width:100%;
   max-width:100vw;
   flex-wrap:wrap;
-/*   to make the elements wrap onto the next line instead of a scrollable page on horizontal axis. */
+/*to make the elements wrap onto the next line instead of a scrollable page on horizontal axis. */
   justify-content:space-evenly;
   align-items:space-evenly;
   padding-bottom:2rem;
 }
 
 .project-tile{
-  flex:0;
+  flex:0 1 0; /* grow-shrink-basis */
   padding:1.1rem 0;
 }
 .project-tile span{
@@ -336,8 +374,7 @@ nav li{
   transform: translateY(-1rem) scale(1.5);
   transition: transform 1s;
 }
-/* tranform will not work on inline elements, so make <a> tags inline-block.
-*/
+/* tranform will not work on inline elements, so make <a> tags (.profilebutton) inline-block.*/
 footer{
   border-top:4px solid var(--main-red);
   background-color:var(--main-gray);
@@ -366,7 +403,7 @@ footer p{
     margin-right:0.2rem;
   }
   #skillLists ul{
-    flex:50%;
+    flex:1 1 50%;
   }
   
 }
