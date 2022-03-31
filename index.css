@@ -7,6 +7,11 @@
   /* --main-gray: #303841; */
 }
  
+html{
+  scroll-behavior:smooth;
+  /* for smooth scrolling to nav links inside the page */
+}
+
 body{
   margin:0; 
   padding:0;
@@ -52,10 +57,13 @@ nav li{
 }
 
 .navbutton:hover{
-  background-color:var(--main-yellow); 
+  /* background-color:var(--main-yellow); 
   color:var(--main-darkblue);
-  transition:border 0.01s, background-color 0.7s;
+  transition:border 0.01s, background-color 0.7s; */
+  color:var(--main-yellow);
+  transition: color 0.5s;
 }
+
 
 #welcomeSection{
   display:flex;
@@ -95,7 +103,7 @@ nav li{
   font-size:1.8rem;
   font-weight: 700;
   overflow: hidden; /* Ensures the content is not revealed until the animation */
-  border-right: .3rem solid white; /* The typwriter cursor */
+  border-right: .3rem solid var(--main-yellow); /* The typwriter cursor */
   white-space: nowrap; /* Keeps the content on a single line */
   letter-spacing: .5rem;
   margin: 0 auto; /* Gives that scrolling effect as the typing happens */
@@ -116,7 +124,7 @@ nav li{
 /* typewriter cursor effect */
 @keyframes blink-cursor {
   from, to { border-color: transparent }
-  50% { border-color: white }
+  50% { border-color: var(--main-yellow) }
   
 }
 
@@ -251,26 +259,26 @@ nav li{
   margin:0;
   padding:0;
   background-color:var(--main-darkblue);
-  color:white;
+  color:var(--main-yellow);
   font-size: 1.2rem;
     
 }
-#skills{
+#skillDiv{
   margin:0;
   padding:3rem;
  
 }
-#skills h2{
+#skillDiv h2{
   text-transform: uppercase;
   font-size:1.5rem;
 }
 
-#skillLists{
+#skillListsDiv{
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
 }
-#skillLists ul{
+#skillListsDiv ul{
   list-style: none;
   text-align: center;
   border-left:4px solid var(--nav-color);
@@ -278,39 +286,27 @@ nav li{
   flex:1 1 25%; 
   /* flex-grow/shrink/basis. Flex-direction is ROW so flex-basis  is setting the initial WIDTH of flex-item as 25% of parent */
 }
-#skillLists ul:nth-child(1){
-  animation: animateList1 2s linear ;
+
+.slideright{
+  transform:translateX(-50%); /* percentage of ITSELF along the specified axis i.e. ul's 'width' in this case */
+  transition: transform 2s linear;
 }
-@keyframes animateList1 {
-  from{
-    transform:translateX(-50%); 
-    /* percentage of ITSELF along the specified axis i.e. ul's 'width' in this case */
-  }
-  to{
-    transform: translateX(0);
-  }
+.slideright.active{
+  transform: translateX(0);
 }
-#skillLists ul:nth-child(2){
-  animation: animateList2 2s linear ;
+.slideup{
+  transform:translateY(50%); 
+  transition: transform 2s linear;
 }
-@keyframes animateList2 {
-  from{
-    transform:translateY(50%);
-  }
-  to{
-    transform: translateY(0);
-  }
+.slideup.active{
+  transform: translateY(0);
 }
-#skillLists ul:nth-child(3){
-  animation: animateList3 2s linear ;
+.slideleft{
+  transform:translateX(50%); 
+  transition: transform 2s linear;
 }
-@keyframes animateList3 {
-  from{
-    transform:translateX(50%);
-  }
-  to{
-    transform: translateX(0);
-  }
+.slideleft.active{
+  transform: translateX(0);
 }
 
 .skillType{
@@ -386,12 +382,10 @@ nav li{
   background-color:var(--main-darkblue);
 }
 #Contact{
-  /* text-align:center; */
+  text-align:center;
   color:white;
   margin:0;
-  padding-left: 3rem;
-  padding-bottom:3rem;
-  text-align: justify;
+  padding: 3rem;
   font-size: 1.2rem;
 }
 
@@ -410,12 +404,62 @@ nav li{
 footer{
   border-top:4px solid var(--nav-color);
   background-color:var(--main-darkblue);
-  color:white;
+  color:var(--main-yellow);
   padding-bottom:1rem;
   margin-bottom:0;
   }
 footer p{
   text-align:center;
+}
+
+
+
+#contactForm{
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  width:70%;
+  font-size: 1.2rem;
+  
+}
+#contactForm label{
+  text-align: start;
+  margin-bottom: 0.5rem;
+  color:var(--main-yellow);
+}
+#contactForm input{
+  font-family:inherit;
+  font-size: 1rem;
+  box-shadow: none;
+  border:none;
+  padding: 1rem;
+  margin-bottom: 0.8rem;
+  border-radius: 3px;;
+}
+#contactForm textarea{
+  font-family:inherit;
+  font-size: 1rem;
+  box-shadow: none;
+  border:none;
+  padding: 0.8rem;
+  margin-bottom: 0.8rem;
+  border-radius: 3px;
+}
+#contactForm button{
+  margin: auto;
+  background-color: var(--nav-color);
+  color:white;
+  border:none;
+  padding:0.6rem;
+  font-size: 1rem;
+  border-radius: 3px;
+  cursor: pointer;
+  max-width: fit-content;
+}
+#contactForm p{
+  text-align: start;
+  font-size: 1rem;
+  color:var(--main-yellow);
 }
 
 @media(max-width:450px)
@@ -434,8 +478,15 @@ footer p{
     margin-left:0;
     margin-right:0.2rem;
   }
-  #skillLists ul{
+  #skillListsDiv ul{
     flex:1 1 50%;
   }
-  
+    
+}
+
+@media(max-width:700px)
+{
+  #contactForm{
+    width:90%;
+  }
 }

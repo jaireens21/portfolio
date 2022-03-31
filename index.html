@@ -84,14 +84,14 @@
     
   </section>
 
-  <section id="skillSection">
-    <div id="skills">
+  <section id="skillSection" >
+    <div id="skillDiv" >
 
       <h2>Skills</h2>
 
-      <div id="skillLists">
+      <div id="skillListsDiv">
         
-        <ul>
+        <ul class="skillList slideright">
           <li class="skillType">Front End</li>
           <br>
           <li>HTML 5</li>
@@ -100,7 +100,7 @@
           <li>Bootstrap 5</li>
         </ul>
 
-        <ul>
+        <ul class="skillList slideup" >
           <li class="skillType">Back End</li>
           <br>
           <li>Node.js</li>
@@ -110,7 +110,7 @@
           <li>React</li>
         </ul>
 
-        <ul>
+        <ul class="skillList slideleft">
           <li class="skillType">CMS & Version Control</li>
           <br>
           <li>Git</li>
@@ -163,8 +163,19 @@
   
     <div id="Contact">
       <h2>CONTACT</h2>
-      <p>If you like what you see and would like to talk about working together, or just fancy a chat!</p>
-      <p>Please don't hesitate to get in touch with me at : <a href="mailto:jaireen.s21@gmail.com">jaireen.s21@gmail.com</a> </p>
+      <p>If you like what you see and would like to talk about working together, or just fancy a chat! Please don't hesitate to get in touch with me at : <a href="mailto:jaireen.s21@gmail.com">jaireen.s21@gmail.com</a> </p>
+      <p>Or simply fill in the form below:</p>
+      <form id="contactForm">
+        <label for="name">Your Name*</label>
+        <input id="name" type="text" name="name" placeholder="Name">
+        <label for="email">Your Email*</label>
+        <input id="email" type="email" name="email" placeholder="Email Address">
+        <label for="name">Your Message</label>
+        <textarea id="message" rows="5" cols="10" name="message" placeholder="Message"></textarea>
+        <p>* field is required</p>
+        <button type="submit">Submit</button>
+        
+      </form>
 
     </div>
   </section>
