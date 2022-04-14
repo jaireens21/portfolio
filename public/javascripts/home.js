@@ -34,3 +34,8 @@ let options = {
 let observer = new IntersectionObserver(callbackFunc, options);
 
 observer.observe(document.getElementById('skillSection'));
+
+//dismissable alert
+document.getElementById("myAlertBtn").addEventListener('click', function(){
+  document.getElementById("myAlert").classList.add('hidden');
+});

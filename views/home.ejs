@@ -13,12 +13,26 @@
 
 <nav id="navbar">
   <ul>
-    <li><a class="white navbutton" href="#">Home</a></li>
+    <li><a class="white navbutton" href="/">Home</a></li>
     <li><a class="white navbutton" href="#aboutSection">About</a></li>
     <li><a class="white navbutton" href="#workSection">Work</a></li>
     <li><a class="white navbutton" href="#contactSection">Contact</a></li>
   </ul>  
 </nav>
+
+<%if (showAlert){%>
+  <div id="myAlert" style=<%=success?"background-color:#E0F6E3":"background-color:#F4D0D5"%>>
+    <% if(success) {%> 
+      <h1>Message sent!</h1>
+      <p>Thank you for reaching out! I will get in touch with you shortly.</p>
+    <% }else{ %> 
+      <h1>Uh oh!</h1>
+      <p>Your message could not be sent. Please try again later or email me: jaireen.s21@gmail.com</p>
+    <% } %> 
+    <button type="button" id="myAlertBtn" aria-label="Close">X</button>
+  </div>
+<%}%>
+
 
 <main>
   

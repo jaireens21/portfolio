@@ -15,16 +15,17 @@ const nodemailer = require('nodemailer');
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 
+
 app.get("/", (req,res)=>{
-    return res.render('home.ejs');
+  return res.render('home.ejs',{showAlert:false});
 })
 
 
 app.post("/", (req,res)=>{
 
-    const{name,email,message}=req.body;
+  const{name,email,message}=req.body;
     
-    //send email with message 
+  //send email with message 
   const transporter = nodemailer.createTransport({
     service:'gmail',
     auth:{
@@ -44,14 +45,17 @@ app.post("/", (req,res)=>{
   transporter.sendMail(mailOptions,(err)=>{
     if(err){
       console.log(err);
+      return res.render('home.ejs',{showAlert:true,success:false});
+    }else{
+      console.log("email sent!");
+      return res.render('home.ejs',{showAlert:true,success:true});
     }
   })
-//   req.flash('success', 'Your message has been received. Thank you for reaching out!');
-  console.log("email sent!");
-  //error in alert
-  return alert("Thank you for reaching out!Your message has been received. I will get in touch with you shortly.");
+   
   
 })
+
+
 
 app.listen(3000, ()=>{
     console.log("listening on port 3000");
