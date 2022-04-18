@@ -27,6 +27,7 @@ nav{
   position:fixed; 
   top:0; 
   left:0; 
+  z-index: 99;
   width:100%;
   max-width: 100vw;
   height: 2.5rem;
@@ -311,7 +312,7 @@ nav li{
 }
 
 .slideright{
-  transform:translateX(-50%); /* percentage of ITSELF along the specified axis i.e. ul's 'width' in this case */
+  transform:translateX(-75%); /* percentage of ITSELF along the specified axis i.e. ul's 'width' in this case */
   transition: transform 2s linear;
 }
 .slideright.active{
@@ -325,7 +326,7 @@ nav li{
   transform: translateY(0);
 }
 .slideleft{
-  transform:translateX(50%); 
+  transform:translateX(75%); 
   transition: transform 2s linear;
 }
 .slideleft.active{
@@ -361,8 +362,8 @@ nav li{
   max-height:400px; 
   margin:0; 
   padding:0; 
-  border-top-right-radius: 10px;
-  border-top-left-radius: 10px;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
 }
 
 #projects{
