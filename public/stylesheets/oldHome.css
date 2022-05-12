@@ -1,0 +1,553 @@
+:root {
+    --nav-color: #126782; 
+    --main-yellow: #FD9E02;
+    --main-darkblue:#023047; 
+    /*--main-red: #be3144; */
+    /*--main-blue: #212F3D; */
+    /* --main-gray: #303841; */
+  }
+   
+  html{
+    scroll-behavior:smooth;
+    /* for smooth scrolling to nav links inside the page */
+  }
+  
+  body{
+    margin:0; 
+    padding:0;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+  
+  a{
+    text-decoration:none; 
+    color:inherit;
+  }
+   
+  nav{
+    position:fixed; 
+    top:0; 
+    left:0; 
+    z-index: 99;
+    width:100%;
+    max-width: 100vw;
+    height: 2.5rem;
+    font-size:1.25rem;
+  }
+  nav ul{
+    margin:0;
+    padding:0;
+    display:flex;
+    justify-content:flex-end;
+    background-color:var(--nav-color);
+  }
+  
+  nav li{
+    list-style:none;
+    margin:0.5rem;
+    padding:0;
+  }
+  
+  
+  .white{
+    color:white;
+  }
+  
+  .navbutton{
+    padding:0.5rem;
+    
+  }
+  
+  .navbutton:hover{
+    /* background-color:var(--main-yellow); 
+    color:var(--main-darkblue);
+    transition:border 0.01s, background-color 0.7s; */
+    color:var(--main-yellow);
+    transition: color 0.5s;
+  }
+  
+  #myAlert{
+    position:fixed ;
+    top:3rem;
+    left:0;
+    transform: translateX(calc(50vw - 50%)); 
+    /* position middle of screen horizontally */
+    z-index: 99;
+    background-color:#E0F6E3;
+    /* #F4D0D5 PINK FOR ERROR */
+    opacity:0.8;
+    border-radius: 10px;
+    padding:1rem 2rem;
+    text-align: center;
+  }
+  #myAlertBtn{
+    position:absolute;
+    top:10px;
+    right:10px;
+    background:none;
+    box-shadow: none;
+    border:none;
+    font-size: large;
+  }
+  
+  #welcomeSection{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    justify-content:center;
+    color:var(--nav-color);
+    background-color:black;
+    background-image: linear-gradient(45deg, black 0%, #181719 25%,#212F3D 50%,#504E4E 100%);
+    height:100vh;
+    margin:0; 
+    padding:0;
+  }
+  #nameDiv{
+    margin-bottom: 5rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+  .path {
+    animation: draw 10s forwards;
+    /* forwards so that the final state remains how the animation ends. */
+  }
+  @keyframes draw {
+    to {
+      stroke-dashoffset: 0;
+      /* The stroke-dashoffset property defines the location along an SVG path where the dash of a stroke will begin. The higher the offset, the further along the path the dashes will begin. We start with a very high offset & then bring it to zero to animate as if the path is being drawn */
+    }
+  }
+  
+  #taglineDiv{
+    display:flex;
+    justify-content: center;
+  }
+  #tagline{
+    font-style:italic; 
+    font-size:1.8rem;
+    font-weight: 700;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .3rem solid var(--main-yellow); /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    letter-spacing: .5rem;
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    transition: all 3.5s;
+    animation: 
+      typing 3.5s steps(30, end),
+      blink-cursor 0.5s step-end infinite;
+      /* step-end is same as steps(1,end). End means that the last jump will happen when the animation ends */
+  }
+  /* typing effect */
+  @keyframes typing {
+    from { width: 0%; transform: scale(0.5); }
+    to { 
+      width: 100%;
+      transform: scale(1); 
+    }
+  }
+  /* typewriter cursor effect */
+  @keyframes blink-cursor {
+    from, to { border-color: transparent }
+    50% { border-color: var(--main-yellow) }
+    
+  }
+  
+  .squares li{
+    list-style: none;
+    position: absolute;
+    animation: flyUp 13s linear infinite;
+  }
+  .squares li:nth-child(1){
+    background-color: #219EBC; 
+    left: 15%; /* % of parent's width */
+    width: 80px;
+    height: 80px;
+  }
+  .squares li:nth-child(2) {
+    background-color: #FD9E02;
+    left: 30%;
+    width: 20px;
+    height: 20px;
+    opacity: 0;
+    animation-delay: 2s;
+  }
+  .squares li:nth-child(3) {
+    background-color: #FD9E02; 
+    right: 5%;
+    width: 40px;
+    height: 40px;
+    opacity: 0;
+    animation-delay: 6s;
+  }
+  .squares li:nth-child(4) {
+    background-color: #58B4D1;
+    right: 25%;
+    width: 60px;
+    height: 60px;
+    opacity: 0;
+    animation-delay: 4s;
+  }
+  .squares li:nth-child(5) {
+    background-color: #219EBC;
+    width: 20px;
+    height: 20px;
+    opacity: 0;
+    animation-delay: 1s;
+  }
+  .squares li:nth-child(6) {
+    background-color:#219EBC;
+    left: 15%;
+    width: 40px;
+    height: 40px;
+    opacity: 0;
+    animation-delay: 8s;
+  }
+  @keyframes flyUp{
+    0% {
+    opacity: 0;
+    border-radius: 3px;
+    transform: translateY(200px) rotate(0deg);
+    }
+    30% {
+    opacity: 0.5;
+    }
+    100% {
+    opacity: 0;
+    border-radius: 50%;
+    transform: translateY(-470px) rotate(720deg);
+    }
+  }
+  #aboutSection{
+    margin:0;
+    padding:0;
+    border: none;
+    background-color: white;
+    color: var(--nav-color);
+    max-height: fit-content;
+  }
+  #aboutText{
+    margin:0;
+    padding:3rem;
+    text-align: justify;
+    font-size: 1.2rem;
+    
+  }
+  #aboutText h2{
+    
+    text-transform: uppercase;
+    font-size:1.5rem;
+  }
+  #blogLink{
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  
+  .hidden{
+    display:none;
+  }
+  
+  .expandable{
+    opacity:0;
+    max-height:0px;
+    pointer-events: none; 
+    /* so that we cannot click on the hiddden text & can easily click on the ReadMore button */
+    transition: all 1s linear;
+  }
+  .expandable-open{
+    opacity:1;
+    height:auto;
+    max-height:50rem;
+    pointer-events:all;
+    /* so we can click on blog link */
+  }
+  #readMoreBtn{
+    box-shadow: none;
+    background-color: var(--nav-color);
+    color:white;
+    border:none;
+    padding:0.4rem;
+    border-radius: 3px;
+    z-index: 1000;
+    cursor: pointer;
+  }
+  .profilebutton{
+    display:inline-block; 
+    margin:2rem 3rem 1.25rem 0;
+    padding:0.3rem;
+    color:var(--nav-color); 
+    font-size:1.2rem;
+  }
+  
+  .profilebutton:hover {
+    transform: translateY(-1rem) scale(1.5);
+    background-color: var(--main-yellow);
+    border-radius: 5px;
+    transition: all 1s;
+  }
+  /* tranform will not work on inline elements, so make <a> tags (.profilebutton) inline-block.*/
+  
+  #skillSection{
+    margin:0;
+    padding:0;
+    background-color:var(--main-darkblue);
+    color:var(--main-yellow);
+    font-size: 1.2rem;
+      
+  }
+  #skillDiv{
+    margin:0;
+    padding:3rem;
+   
+  }
+  #skillDiv h2{
+    text-transform: uppercase;
+    font-size:1.5rem;
+  }
+  
+  #skillListsDiv{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+  #skillListsDiv ul{
+    list-style: none;
+    text-align: center;
+    border-left:4px solid var(--nav-color);
+    line-height: 1.7rem;
+    flex:1 1 25%; 
+    /* flex-grow/shrink/basis. Flex-direction is ROW so flex-basis  is setting the initial WIDTH of flex-item as 25% of parent */
+  }
+  
+  .slideright{
+    transform:translateX(-75%); /* percentage of ITSELF along the specified axis i.e. ul's 'width' in this case */
+    transition: transform 2s linear;
+  }
+  .slideright.active{
+    transform: translateX(0);
+  }
+  .slideup{
+    transform:translateY(30%); 
+    transition: transform 2s linear;
+  }
+  .slideup.active{
+    transform: translateY(0);
+  }
+  .slideleft{
+    transform:translateX(75%); 
+    transition: transform 2s linear;
+  }
+  .slideleft.active{
+    transform: translateX(0);
+  }
+  
+  .skillType{
+    text-transform: uppercase;
+    font-size: 1.3rem;
+  }
+  
+  #workSection{
+    background-color:white; 
+    margin:0; 
+    padding:0;
+    color:var(--nav-color);
+  }
+  #work{
+    margin:0;
+    padding:3rem;
+    text-align:center; 
+  }
+  #work h2{
+    text-align: left;
+    font-size:1.5rem;
+    text-transform: uppercase;
+    margin-top:0; 
+    padding-top:2rem; 
+    margin-bottom:3.5rem;
+  }
+  
+  #projects{
+    display:flex;
+    width:100%;
+    max-width:100vw;
+    flex-wrap:wrap;
+  /*to make the elements wrap onto the next line instead of a scrollable page on horizontal axis. */
+    justify-content:space-evenly;
+    align-items:space-evenly;
+    padding-bottom:2rem;
+  }
+  
+  .project-tile{
+    flex:0 1 0; /* grow-shrink-basis */
+    padding:0;
+    border:3px solid var(--main-darkblue);
+    border-radius: 10px;
+    position: relative; /* to be able to position img-overlay wrt project-tile */
+    margin-bottom: 3rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+  }
+  
+  .project-image{
+    max-width:400px; 
+    max-height:300px; 
+    margin:0; 
+    padding:0; 
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    
+  }
+  .img-overlay{
+    position: absolute;
+    top:25%;
+    left:0;
+    font-size: 1.5rem;
+    color: black;
+    font-weight: 700;
+    margin: 0 20px;
+    padding:5px;
+    opacity:0;
+    pointer-events: none;
+    text-align: center;
+  }
+  
+  .project-image:hover{
+    opacity: 0.2;
+  }
+  
+  .project-image:hover + .img-overlay{
+    opacity:1;
+    transition: all 1.2s linear;
+  }
+  
+  .project-links{
+    display:inline-block; 
+    color:white;
+    background-color:var(--main-darkblue);
+    width:100%; 
+    margin-top:-7px;
+    padding-top:10px; 
+    padding-bottom:10px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  
+  
+  
+  
+  #contactSection{
+    margin:0;
+    padding:0;
+    background-color:var(--main-darkblue);
+  }
+  #Contact{
+    text-align:center;
+    color:white;
+    margin:0;
+    padding: 3rem;
+    font-size: 1.2rem;
+  }
+  
+  #Contact h2{
+    font-size:1.5rem;
+    margin-top:0; 
+    padding-top:2rem; 
+    margin-bottom: 2rem;;
+  }
+  #Contact p {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    
+  }
+  
+  footer{
+    border-top:4px solid var(--nav-color);
+    background-color:var(--main-darkblue);
+    color:var(--main-yellow);
+    padding-bottom:1rem;
+    margin-bottom:0;
+    }
+  footer p{
+    text-align:center;
+  }
+  
+  
+  
+  #contactForm{
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    width:70%;
+    font-size: 1.2rem;
+    
+  }
+  #contactForm label{
+    text-align: start;
+    margin-bottom: 0.5rem;
+    color:var(--main-yellow);
+  }
+  #contactForm input{
+    font-family:inherit;
+    font-size: 1rem;
+    box-shadow: none;
+    border:none;
+    padding: 1rem;
+    margin-bottom: 0.8rem;
+    border-radius: 3px;;
+  }
+  #contactForm textarea{
+    font-family:inherit;
+    font-size: 1rem;
+    box-shadow: none;
+    border:none;
+    padding: 0.8rem;
+    margin-bottom: 0.8rem;
+    border-radius: 3px;
+  }
+  #contactForm button{
+    margin: auto;
+    background-color: var(--nav-color);
+    color:white;
+    border:none;
+    padding:0.6rem;
+    font-size: 1rem;
+    border-radius: 3px;
+    cursor: pointer;
+    max-width: fit-content;
+  }
+  #contactForm p{
+    text-align: start;
+    font-size: 1rem;
+    color:var(--main-yellow);
+  }
+  
+  @media(max-width:450px)
+  { 
+    #welcomeSection{
+      height:60vh;
+    }
+    #workSection img{
+      max-width:300px; 
+      max-height:300px; 
+    }
+    nav ul{
+      justify-content:center;
+    }
+    nav li{
+      margin-left:0;
+      margin-right:0.2rem;
+    }
+    #skillListsDiv ul{
+      flex:1 1 50%;
+    }
+      
+  }
+  
+  @media(max-width:700px)
+  {
+    #contactForm{
+      width:90%;
+    }
+  }

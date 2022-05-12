@@ -17,7 +17,7 @@ app.use(express.json());
 
 
 app.get("/", (req,res)=>{
-  return res.render('home.ejs',{showAlert:false});
+  return res.render('home2.ejs',{showAlert:false});
 })
 
 
@@ -45,10 +45,10 @@ app.post("/", (req,res)=>{
   transporter.sendMail(mailOptions,(err)=>{
     if(err){
       console.log(err);
-      return res.render('home.ejs',{showAlert:true,success:false});
+      return res.render('home2.ejs',{showAlert:true,success:false});
     }else{
       console.log("email sent!");
-      return res.render('home.ejs',{showAlert:true,success:true});
+      return res.render('home2.ejs',{showAlert:true,success:true});
     }
   })
    

@@ -5,20 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
-    <link href="../public/stylesheets/home.css" rel="stylesheet">
-    <title>Document</title>
+    <link href="/stylesheets/oldHome.css" rel="stylesheet">
+    <title>Jaireen Singh</title>
 </head>
 <body>
     
 
 <nav id="navbar">
   <ul>
-    <li><a class="white navbutton" href="#">Home</a></li>
+    <li><a class="white navbutton" href="/">Home</a></li>
     <li><a class="white navbutton" href="#aboutSection">About</a></li>
     <li><a class="white navbutton" href="#workSection">Work</a></li>
     <li><a class="white navbutton" href="#contactSection">Contact</a></li>
   </ul>  
 </nav>
+
+<%if (showAlert){%>
+  <div id="myAlert" style=<%=success?"background-color:#E0F6E3":"background-color:#F4D0D5"%>>
+    <% if(success) {%> 
+      <h1>Message sent!</h1>
+      <p>Thank you for reaching out! I will get in touch with you shortly.</p>
+    <% }else{ %> 
+      <h1>Uh oh!</h1>
+      <p>Your message could not be sent. Please try again later or email me: jaireen.s21@gmail.com</p>
+    <% } %> 
+    <button type="button" id="myAlertBtn" aria-label="Close">X</button>
+  </div>
+<%}%>
+
 
 <main>
   
@@ -52,12 +66,16 @@
       
       <h2>About</h2>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Feugiat nibh sed pulvinar proin gravida. Semper viverra nam libero justo laoreet sit amet cursus. Dui nunc mattis enim ut tellus elementum sagittis vitae et. Elit ut aliquam purus sit amet luctus. Vitae purus faucibus ornare suspendisse. Quam vulputate dignissim suspendisse in est ante in. Sed libero enim sed faucibus turpis in eu mi. Vitae congue eu consequat ac felis donec. Id velit ut tortor pretium. Faucibus turpis in eu mi bibendum neque egestas congue quisque. Quis varius quam quisque id diam. Mi tempus imperdiet nulla malesuada pellentesque elit eget. Feugiat sed lectus vestibulum mattis. Nam aliquam sem et tortor consequat id porta nibh.</p>
+      <p>Hi there! My name is Jaireen, and I am an aspiring full stack web developer from the Greater Toronto Area of Ontario, Canada. I love coding, problem solving, learning, blogging and singing! If you'd like to know more about me and my journey, continue reading using the Read More button or jump ahead to my portfolio!</p>
      
       <div id="expandableDiv" class="expandable">
-        <p>Urna nec tincidunt praesent semper feugiat nibh sed pulvinar proin. Praesent semper feugiat nibh sed pulvinar proin gravida hendrerit. Suspendisse ultrices gravida dictum fusce. Adipiscing elit pellentesque habitant morbi tristique senectus. Adipiscing elit ut aliquam pur</p>
-  
-        <p>Urna nec tincidunt praesent semper feugiat nibh sed pulvinar proin. Praesent semper feugiat nibh sed pulvinar proin gravida hendrerit. Suspendisse ultrices gravida dictum fusce. Adipiscing elit pellentesque habitant morbi tristique senectus. Adipiscing elit ut aliquam pur</p>
+        <p>Originally from India, I studied Engineering at University in Delhi. Before moving to Canada, I worked in the Power Industry, managing projects ranging from coal-based power plants to EV-charging stations. Every day brought a new challenge and a new learning! </p>
+
+        <p>I had always been interested in coding, especially during my high school years where I made some cool C++ projects. During my time in the Power Industry, the tables were turned and I was assigned the role of the user. It was here that I worked with the company's IT team to revamp an existing project-manager-portal, adding new features and implementing Role Based Access Control while trying to make it more user-friendly.</p>
+
+        <p>Upon moving to Canada, I decided to dive back into the computing world with web development. The world of full-stack web development is engaging, challenging and keeps me on my toes! I am currently honing my skills with personal projects and freelance work all the while expanding my knowledge of web design.</p>
+
+        <p>Take a look at the projects I have worked on and please feel free to get in touch if you like what you see!</p>
       </div>
 
       <button id="readMoreBtn">Read More...</button>
@@ -128,31 +146,47 @@
       <h2>WORK</h2>
       <div id="projects">
             
-        <a class="project-tile" href="https://codepen.io/freeCodeCamp/full/zNqgVx"          target="_blank">
-          <img src="https://cdn.freecodecamp.org/testable-projects-fcc/images/tribute.jpg" alt="tribute project">
-          <span>Tribute Project</span>
-        </a>
+        <div class="project-tile">
+          <img class="project-image" src="../photos/dadjoke.png" alt="random dad joke generator">
+          <div class="img-overlay"><p>A React-based app that uses API calls to generate a random dad joke</p></div>
+          <span class="project-links">
+            <a class="button" href="https://jaireens21.github.io/dad-joke-api/" target="_blank">Live Demo</a>
+            <a class="button" href="https://github.com/jaireens21/dad-joke-api" target="_blank">Github Repo</a>
+          </span>
+          
+        </div>
+
+        <!-- <div class="project-tile">
+          <img class="project-image" src="../photos/yelpcamp.jpeg" alt="yelpcamp project">
+          <div class="img-overlay"><p>A yelp-style website, but for campgrounds.</p><p>MongoDB | Express | Node</p></div>
+          <span class="project-links">
+            <a class="button" href="https://evening-lake-92721.herokuapp.com/" target="_blank">Live Demo</a>
+            <a class="button" href="https://github.com/jaireens21/yelp-camp" target="_blank">Github Repo</a>
+          </span>
+          
+        </div> -->
+
+        <div class="project-tile">
+          <img class="project-image" src="../photos/BookMySport.jpeg"  alt="BookMySport project">
+          <div class="img-overlay"><p>A website for booking Sports Venues across Ontario</p><p>MongoDB | Express | Node</p></div>
+          <span class="project-links">
+            <a class="button" href="https://aqueous-garden-43980.herokuapp.com/" target="_blank">Live Demo</a>
+            <a class="button" href="https://github.com/jaireens21/playo" target="_blank">Github Repo</a>
+          </span>
+        </div>
+        <div class="project-tile">
+          <img class="project-image" src="../photos/todo.png" alt="to-do app">
+          <div class="img-overlay"><p>A simple React-based To-Do App </p></div>
+          <span class="project-links">
+            <a class="button" href="https://jaireens21.github.io/react-todo-app/" target="_blank">Live Demo</a>
+            <a class="button" href="https://github.com/jaireens21/react-todo-app" target="_blank">Github Repo</a>
+          </span>
+          
+        </div>
         
-        <a class="project-tile" href="https://codepen.io/freeCodeCamp/full/zNqgVx" 
-            target="_blank">
-          <img src="https://cdn.freecodecamp.org/testable-projects-fcc/images/tribute.jpg" 
-                alt="tribute project">
-          <span>Tribute Project</span>
-        </a>
         
-        <a class="project-tile" href="https://codepen.io/freeCodeCamp/full/zNqgVx" 
-            target="_blank">
-          <img src="https://cdn.freecodecamp.org/testable-projects-fcc/images/tribute.jpg" 
-                alt="tribute project">
-          <span>Tribute Project</span>
-        </a>
         
-        <a class="project-tile" href="https://codepen.io/freeCodeCamp/full/qRZeGZ" 
-            target="_blank">
-          <img src="https://cdn.freecodecamp.org/testable-projects-fcc/images/random-quote-machine.png" 
-                alt="tribute project">
-          <span>Random Quote Project</span>
-        </a>
+        
         
       </div>
     </div>
@@ -163,18 +197,17 @@
   
     <div id="Contact">
       <h2>CONTACT</h2>
-      <p>If you like what you see and would like to talk about working together, or just fancy a chat! Please don't hesitate to get in touch with me at : <a href="mailto:jaireen.s21@gmail.com">jaireen.s21@gmail.com</a> </p>
+      <p>If you like what you see and would like to talk about working together, or just fancy a chat! Please feel free to get in touch with me at : <a href="mailto:jaireen.s21@gmail.com">jaireen.s21@gmail.com</a> </p>
       <p>Or simply fill in the form below:</p>
-      <form id="contactForm">
+      <form id="contactForm" action="/" method="POST">
         <label for="name">Your Name*</label>
-        <input id="name" type="text" name="name" placeholder="Name">
+        <input id="name" type="text" name="name" placeholder="Name" required>
         <label for="email">Your Email*</label>
-        <input id="email" type="email" name="email" placeholder="Email Address">
+        <input id="email" type="email" name="email" placeholder="Email Address" required>
         <label for="name">Your Message</label>
         <textarea id="message" rows="5" cols="10" name="message" placeholder="Message"></textarea>
         <p>* field is required</p>
         <button type="submit">Submit</button>
-        
       </form>
 
     </div>
@@ -185,6 +218,6 @@
   </footer>
   
 </main>
-<script src="../public/javascripts/home.js"></script>
+<script src="/javascripts/oldHome.js"></script>
 </body>
 </html>
