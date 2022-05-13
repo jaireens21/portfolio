@@ -116,8 +116,10 @@ section{
   color:#FD9E02;
   
 }
+
 .project{
-  font-size: 1.2rem;
+  font-size: 1.25rem;
+  /* same size as class="fs-5" */
   border-radius:25px;
   background-color: white;
   color:black;
@@ -131,7 +133,7 @@ section{
 .tiny-project-image{
   
   border:2px solid black;
-  border-radius: 10px;
+  /* border-radius: 10px; */
   
 }
 .projectDetails{
@@ -223,12 +225,24 @@ button:hover{
   #welcomeDiv{
     transform: scale(1.5);
   }
+  #aboutDiv{
+    flex-wrap: wrap;
+  }
   #aboutPhoto{
     width:50%;
     margin-right:2rem;
+    /* align-items: flex-start; */
   }
   #aboutText{
-   width:50%;
+   width:40%;
+  }
+  #aboutTechStack{
+    text-align: center;
+    margin:0 auto;
+    width:100%;
+  }
+  #aboutTechStackDiv{
+    justify-content: center;
   }
   #contactDiv{
     width:50%;

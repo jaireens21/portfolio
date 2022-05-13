@@ -52,7 +52,7 @@
   <section id="welcomeSection" class="mx-auto">
     <div id="welcomeDiv" class="d-flex flex-row mx-auto align-items-center justify-content-center">
       <div class="me-5">
-        <img id="myPhoto1" src="./photos/photo-1482498081626-c0d36d9c5ab9.jpg">
+        <img id="myPhoto1" src="./photos/myPhoto2_small.jpg">
         
       </div>
   
@@ -119,14 +119,12 @@
             <span class="visually-hidden">Next</span>
           </button>
         </div>
-
-
         <div class="projectDetails d-flex flex-column justify-content-center text-center mx-auto px-2">
           <h3 class="fw-bold">Book My Sport</h3>
           <p>A one-stop website for booking different sporting venues across Ontario.</p>
           <div class="text-center mt-3">
             <p class="fw-bold">Tech stack used:</p>
-            <p> EJS | Node JS | Express JS | Passport JS | Nodemailer | Mongo DB | Mongoose </p>
+            <p> EJS | Node JS | Express| Passport | Nodemailer | Mongo DB Atlas | Mongoose </p>
           </div>
           <p class="text-start fw-bold mt-3">The idea:</p>
           <p class="text-start"> Every sport venue, for eg: a venue for baseball/ ice hockey/ football, has its own website for booking. BookMySport can be a one-stop-shop where different kinds of sport venues can register themselves. A user (player) can browse through different venues and book one for a date and time of their choosing.</p>
@@ -187,14 +185,12 @@
           </button>
         </div>
 
-
-
         <div class="projectDetails d-flex flex-column justify-content-center text-center mx-auto px-2">
           <h3 class="fw-bold">Order - In</h3>
           <p>A website for a restaurant to manage their menu and orders, and where customers can order food online.</p>
           <div class="text-center mt-3">
             <p class="fw-bold">Tech stack used:</p>
-            <p> React JS with Hooks | Axios | Node JS | Express | Passport JS | Mongo DB | Mongoose</p>
+            <p> React JS with Hooks | Axios | Node JS | Express | Mongo DB Atlas | Mongoose</p>
           </div>
           <p class="text-start fw-bold mt-3">The idea:</p>
           <p class="text-start"> A simple yet inviting website for a restaurant called "Order-In". The owner can manage the orders and even change dishes on the menu (This may be needed due to seasonal availablity of ingredients or if they are sold out of a particular dish for the day, etc.) These menu changes will reflect on the site immediately. Customers can view the menu as well as order food online, for either pick-up or dine-in, on a date and time of their choosing.</p>
@@ -222,7 +218,7 @@
           <img class="tiny-project-image mx-auto my-2 w-75 " src="../photos/dadjoke.png" alt="random dad joke generator">
           <div class="d-flex flex-column justify-content-center text-center mx-auto px-2 w-75">
             <h3 class="fw-bold">Random Dad Jokes</h3>
-            <p>A React-based app that uses API calls to display a random joke</p>
+            <p>A React-based app that displays a random dad joke.<br/> Uses Axios to make API calls to https://icanhazdadjoke.com/. </p>
             <div class="mx-auto mt-2">
               <button class="btn btn-dark me-3"><a href="https://jaireens21.github.io/dad-joke-api/" target="_blank">Live Demo</a></button>
               <button class="btn btn-dark"><a href="https://github.com/jaireens21/dad-joke-api" target="_blank">Github Repo</a></button>
@@ -234,7 +230,7 @@
           <img class="tiny-project-image mx-auto my-2  w-75" src="../photos/todo.png" alt="todo app">
           <div class="d-flex flex-column justify-content-center text-center mx-auto px-2 w-75">
             <h3 class="fw-bold">To Do App</h3>
-            <p>A simple React-based To-Do App</p>
+            <p>A React-based To-Do App. <br/>Add, edit, delete and check items off your list! <br/> Uses browser's localStorage to persist the item list.</p>
             <div class="mx-auto mt-2">
               <button class="btn btn-dark me-3"><a href="https://jaireens21.github.io/react-todo-app/" target="_blank">Live Demo</a></button>
               <button class="btn btn-dark"><a href="https://github.com/jaireens21/react-todo-app" target="_blank">Github Repo</a></button>
@@ -256,9 +252,9 @@
   <section id="aboutSection" >
 
     <h2 class="text-center">ABOUT ME</h2>
-    <div class="d-flex flex-column flex-xl-row mt-5">
-      <div id="aboutPhoto" class="d-flex flex-column justify-content-center align-items-center" >
-        <img id="myPhoto2" src="./photos/photo-1482498081626-c0d36d9c5ab9.jpg">
+    <div id="aboutDiv" class="d-flex flex-column flex-xl-row mt-5">
+      <div id="aboutPhoto" class="d-flex flex-column align-items-center justify-content-center" >
+        <img id="myPhoto2" src="./photos/myPhoto2.jpg">
         <div class="my-3">
           <a class="profilebutton" href="https://www.linkedin.com/in/jaireen-singh-02646b171/" target="_blank">
             <i class="fab fa-linkedin"></i>
@@ -275,7 +271,7 @@
         </div>
       </div>
 
-      <div id="aboutText">
+      <div id="aboutText" class="my-auto fs-5">
         <p>Hi there! My name is Jaireen Singh, and I am a full stack web developer from Toronto, Canada. I love coding, problem solving, and singing! If you'd like to know more about me and my journey, continue reading using the Read More button.</p>
         <div id="expandableDiv" class="expandable">
           <p>I have always loved coding, especially during my high school years where I made some cool C++ projects. </p>
@@ -287,44 +283,45 @@
           <p>Please feel free to get in touch if you would like to work together!</p>
         </div>
   
-        <button id="readMoreBtn" class="btn btn-dark">Read More...</button>
-  
-        <div class="mt-5">
-          <p class="fw-bold fs-4">My Tech Stack</p>
-          <p>I'm proficient with the following relevant technologies: </p>
-          <div class="d-flex flex-wrap">
-            <div class="techIcon d-flex flex-column align-items-center me-5  mb-3 text-center">
-              <span class="fa-brands fa-html5"></span>
-              <p>HTML5</p>
-            </div>
-            <div class="techIcon d-flex flex-column align-items-center me-5 mb-3 text-center" >
-              <span class="fa-brands fa-css3-alt"></span>
-              <p>CSS3</p>
-            </div>
-            <div class="techIcon d-flex flex-column align-items-center me-5 mb-3 text-center" >
-              <span class="fa-brands fa-js"></span>
-              <p>JavaScript</p>
-            </div>
-            <div class="techIcon d-flex flex-column align-items-center me-5 mb-3 text-center" >
-              <span class="fa-brands fa-react"></span>
-              <p>React JS</p>
-            </div>
-            <div class="techIcon d-flex flex-column align-items-center me-5 mb-3 text-center" >
-              <span class="fa-brands fa-node"></span>
-              <p>Node JS</p>
-            </div>
-            <div class="techIcon d-flex flex-column align-items-center me-5 mb-3 text-center" >
-              <span><img class="fa-brands" src="./photos/mongoDb.png"></span>
-              <p>MongoDB</p>
-            </div>
-            <div class="techIcon d-flex flex-column align-items-center me-5 mb-3 text-center" >
-              <span class="fa-brands fa-github"></span>
-              <p class="text-center">Git & <br/> GitHub</p>
-            </div>
-            <div class="techIcon d-flex flex-column align-items-center me-5 mb-3 text-center" >
-              <span class="fa-brands fa-bootstrap"></span>
-              <p class="text-center">Bootstrap5</p>
-            </div>
+        <button id="readMoreBtn" class="btn btn-dark mb-5">Read More...</button>
+   
+      </div>
+
+      <div id="aboutTechStack"  >
+        <p class="fw-bold fs-4">My Tech Stack</p>
+        <p class="fs-5 mb-5">I'm proficient with the following relevant technologies: </p>
+        <div id="aboutTechStackDiv" class="d-flex flex-wrap">
+          <div class="techIcon d-flex flex-column align-items-center me-5  mb-3 text-center">
+            <span class="fa-brands fa-html5"></span>
+            <p>HTML5</p>
+          </div>
+          <div class="techIcon d-flex flex-column align-items-center me-5 mb-3 text-center" >
+            <span class="fa-brands fa-css3-alt"></span>
+            <p>CSS3</p>
+          </div>
+          <div class="techIcon d-flex flex-column align-items-center me-5 mb-3 text-center" >
+            <span class="fa-brands fa-js"></span>
+            <p>JavaScript</p>
+          </div>
+          <div class="techIcon d-flex flex-column align-items-center me-5 mb-3 text-center" >
+            <span class="fa-brands fa-react"></span>
+            <p>React JS</p>
+          </div>
+          <div class="techIcon d-flex flex-column align-items-center me-5 mb-3 text-center" >
+            <span class="fa-brands fa-node"></span>
+            <p>Node JS</p>
+          </div>
+          <div class="techIcon d-flex flex-column align-items-center me-5 mb-3 text-center" >
+            <span><img class="fa-brands" src="./photos/mongoDb.png"></span>
+            <p>MongoDB</p>
+          </div>
+          <div class="techIcon d-flex flex-column align-items-center me-5 mb-3 text-center" >
+            <span class="fa-brands fa-github"></span>
+            <p class="text-center">Git & <br/> GitHub</p>
+          </div>
+          <div class="techIcon d-flex flex-column align-items-center me-5 mb-3 text-center" >
+            <span class="fa-brands fa-bootstrap"></span>
+            <p class="text-center">Bootstrap5</p>
           </div>
         </div>
       </div>
