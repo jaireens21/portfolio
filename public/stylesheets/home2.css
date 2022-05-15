@@ -85,16 +85,16 @@ section{
   align-items:center;
   text-align:center;
   justify-content:center;
-  height:100vh;
+  height:70vh;
   margin:0; 
   padding:0;
   /* background: linear-gradient(135deg, rgb(255,255,255) 55%,rgb(247, 208, 10) 55%,rgb(247, 208, 10) 62%,rgb(255,255,255) 62%);
   background-repeat: no-repeat;
   border-bottom:10px solid rgb(247, 208, 10) ; */
 }
-#welcomeDiv{
+/* #welcomeDiv{
   transform: scale(1.2);
-}
+} */
 #myPhoto1{
   display: none;
  
@@ -138,6 +138,8 @@ section{
 }
 .projectDetails{
   width:100%;
+  margin:auto 0;
+  padding:auto 0;
 }
 
 #aboutPhoto{
@@ -202,6 +204,9 @@ button:hover{
 }
 
 @media(min-width:768px){
+  #welcomeSection{
+    height:100vh;
+  }
   #myPhoto1{
     display: inline-block;
     height:300px;
