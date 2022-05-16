@@ -94,6 +94,7 @@ nav{
   height:100vh;
   margin:0; 
   padding:0;
+  transform: scale(1.2);
 }
 #welcomeDiv{
   
@@ -212,6 +213,9 @@ button:hover{
 
 @media(min-width:768px){
 
+  #welcomeSection{
+    transform: scale(1);
+  }
   #welcomeDiv{
     justify-content: center;
     align-items: center;
