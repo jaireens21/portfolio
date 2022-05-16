@@ -27,7 +27,7 @@ a:hover{
 section{
   width:80%;
   margin:0 auto;
-  padding-top: 70px; /* because nav is fixed to top */
+  padding-top: 7vh; /* because nav is fixed to top */
 }
 
 
@@ -87,7 +87,7 @@ section{
   border-bottom:10px solid rgb(247, 208, 10) ; */
 }
 #welcomeDiv{
-  /* transform: scale(1.2); */
+  
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -206,7 +206,6 @@ button:hover{
     height:100vh;
   }
   #welcomeDiv{
-    /* transform: scale(1.2); */
     justify-content: center;
     align-items: center;
     flex-direction: row;
@@ -231,9 +230,7 @@ button:hover{
   #welcomeSection{
     width:50%;
   }
-  /* #welcomeDiv{
-    transform: scale(1.5);
-  } */
+ 
   #aboutDiv{
     flex-wrap: wrap;
   }
