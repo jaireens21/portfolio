@@ -30,18 +30,32 @@ section{
   padding-top: 7vh; /* because nav is fixed to top */
 }
 
-
-.nav-link{
-  color:black;
-  margin-right:1rem;
+nav{
+  background-color: black;
+  text-align: center;
+  font-size: 0.9rem;
 }
-.nav-link:hover{
+
+.navLink{
+  color:white;
+  padding:0.5rem;
+  
+}
+.navLink:hover{
   color:#FD9E02;
  
 }
-.navbar-brand:hover{
-  color:#FD9E02;
+/* #backtotop{
+  position: fixed;
+  bottom:3vh;
+  right:2vw;
+  border:2px solid black;
+  padding:0.5rem;
+  background-color: #FD9E02;
 }
+#backtotop:hover{
+  color:white;
+} */
 
 #myAlert{
   position:fixed ;
@@ -202,6 +216,7 @@ button:hover{
 }
 
 @media(min-width:768px){
+
   #welcomeSection{
     height:100vh;
   }
@@ -223,6 +238,13 @@ button:hover{
   }
   .projectDetails{
     width:75%;
+  }
+  nav{
+    font-size: 1.2rem;
+  }
+  .navLink{
+    padding:1rem;
+    
   }
 }
 
