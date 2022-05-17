@@ -22,12 +22,6 @@ a:hover{
 
 }
 
-section{
-  width:80%;
-  margin:0 auto;
-  padding-top: 10vh; /* because nav is fixed to top */
-}
-
 nav{
   background-color: black;
   text-align: center;
@@ -44,6 +38,14 @@ nav{
   color:#FD9E02;
  
 }
+
+
+section{
+  width:80%;
+  margin:0 auto;
+  padding-top: 10vh; /* because nav is fixed to top */
+}
+
 /* #backtotop{
   position: fixed;
   bottom:3vh;
@@ -86,31 +88,38 @@ nav{
 
 
 #welcomeSection{
-  width:75%;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
+  width:80%;
   text-align:center;
-  justify-content:center;
   height:100vh;
   margin:0; 
   padding:0;
+  padding-top: 10vh;
   /* transform: scale(1.2); */
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content: center;
 }
 #welcomeDiv{
-  
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
-
-}
-#myPhoto1{
-  display: none;
-  
+  justify-content: center;
+  align-items: flex-start;
  
+}
+
+
+#welcomePhoto{
+  display: inline-block;
+  width:70%;
+  max-width: 250px;
+  max-height: 250px;
+  border-radius: 50%;
+  margin-bottom: 1.5rem;
+  
 }
 #welcomeDetails{
   width:100%;
+  
 }
 
 .profilebutton{
@@ -118,6 +127,7 @@ nav{
   margin-right: 1rem;
   
 }
+
 #projectSection{
   width:100%;
   background-color: black;
@@ -125,6 +135,9 @@ nav{
 #projectSection>h2{
   color:#FD9E02;
   
+}
+#projectsDiv{
+  width:90%;
 }
 
 .project{
@@ -185,6 +198,8 @@ font-size: 3rem;
 width:50px;
 height:50px;
 }
+
+
 #contactSection{
   width:100%;
   
@@ -223,16 +238,23 @@ button:hover{
     align-items: center;
     flex-direction: row;
   }
-  #myPhoto1{
+  
+  #welcomePhoto{
     display: inline-block;
     height:300px;
+    max-height:300px;
     width:300px;
+    max-width: 300px;
     border-radius: 50%;
     margin-bottom: 1.5rem;
+    margin-right:3rem;
    
   }
   #welcomeDetails{
     width:50%;
+  }
+  #projectsDiv{
+    width:75%;
   }
   .projectDetails{
     width:75%;
@@ -248,9 +270,11 @@ button:hover{
 
 @media (min-width:1200px){
   #welcomeSection{
-    width:50%;
+    width:55%;
   }
- 
+  #projectsDiv{
+    width:60%;
+  }
   #aboutDiv{
     flex-wrap: wrap;
   }
