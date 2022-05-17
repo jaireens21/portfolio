@@ -25,13 +25,14 @@ a:hover{
 section{
   width:80%;
   margin:0 auto;
-  padding-top: 7vh; /* because nav is fixed to top */
+  padding-top: 10vh; /* because nav is fixed to top */
 }
 
 nav{
   background-color: black;
   text-align: center;
   font-size: 0.9rem;
+  max-height: 9vh;
 }
 
 .navLink{
@@ -188,6 +189,7 @@ height:50px;
   width:100%;
   
   padding:2rem;
+  padding-top: 10vh;
   background-color: black;
   color:white;
  
