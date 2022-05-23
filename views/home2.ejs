@@ -125,19 +125,21 @@
             <p> EJS | Node JS | Express| Passport | Nodemailer | Mongo DB Atlas | Mongoose </p>
           </div>
           <p class="text-start fw-bold mt-3" style="font-size:1.3rem">The idea:</p>
-          <p class="text-start"> Every sport venue, for eg: a venue for baseball/ ice hockey/ football, has its own website for booking. BookMySport can be a one-stop-shop where different kinds of sport venues can register themselves. A user (player) can browse through different venues and book one for a date and time of their choosing.</p>
+          <p class="text-start"> Every sports venue, for eg: a venue for playing baseball/ ice hockey/ football, has its own website for booking a time-slot. BookMySport will be a one-stop-site where sports venues can register themselves. A user (player) can then search for all the venues that offer the sport they want to play and book their chosen venue for a date and time.</p>
           
           <p class="text-start fw-bold" style="font-size:1.3rem">Key Features:</p>
           <ul class="text-start">
-            <li>Ability to search a venue by name/location/sport</li>
-            <li>RBAC for venue owners & players</li>
-            <li>Owner: Ability to add, edit, delete sport venue</li>
-            <li>Owner: Ability to edit venue availablity (date and time)</li>
-            <li>Owner: Will be shown 'Conflicting Bookings' if change in date/time/sport availablity affects any existing bookings</li>
-            <li>Owner: Can see all bookings (upcoming & past bookings)</li>
-            <li>Owner: Can make a booking on behalf of a walk-in player</li>
+            
+            <li>Role-Based Access Control (RBAC) for users (venue admin and players)</li>
+            <li>User Credentials based portal login</li>
+            <li>Admin: Ability to add, edit, delete sport venue</li>
+            <li>Admin: Ability to edit venue availablity (date and time)</li>
+            <li>Admin: Will be shown 'Conflicting Bookings' if change in date/time/sport availablity affects any existing bookings</li>
+            <li>Admin: View all bookings for their venue(s) (upcoming & past bookings)</li>
+            <li>Admin: Ability to make a booking on behalf of a walk-in player</li>
             <li>Player: Ability to book venues, see all bookings (upcoming & past bookings)</li>
             <li>Reset password, Forgot password options implemented</li>
+            <li>Ability to search a venue by name/location/sport</li>
           </ul>
           <div class="mx-auto mt-3">
             <button class="btn btn-dark me-3 mb-3"><a href="https://aqueous-garden-43980.herokuapp.com/" target="_blank">Live Demo</a></button>
@@ -192,13 +194,13 @@
             <p> React JS with Hooks | Axios | Node JS | Express | Mongo DB Atlas | Mongoose</p>
           </div>
           <p class="text-start fw-bold mt-3" style="font-size:1.3rem">The idea:</p>
-          <p class="text-start"> A simple yet inviting website for a restaurant called "Order-In". The owner can manage the orders and even change dishes on the menu (This may be needed due to seasonal availablity of ingredients or if they are sold out of a particular dish for the day, etc.) These menu changes will reflect on the site immediately. Customers can view the menu as well as order food online, for either pick-up or dine-in, on a date and time of their choosing.</p>
+          <p class="text-start"> A simple yet inviting website for a restaurant called "Order-In". The website showcases restaurant details such as timings, location, and menu offered. Customers can view the menu as well as order food online, for either pick-up or dine-in, on a date and time of their choosing. The owner/admin can manage the orders and change dishes on the menu (due to seasonal availablity of ingredients, or being sold out of a particular dish). </p>
           <p class="text-start fw-bold" style="font-size:1.3rem">Key Features:</p>
           <ul class="text-start">
-            <li>Login-protected Owner Routes</li>
-            <li>Owner: Ability to add, edit, delete dishes on the menu</li>
-            <li>Owner: Can see all orders (today's, upcoming & past orders)</li>
-            <li>Owner: Can mark a order as completed</li>
+            <li>Admin login authentication with username/password</li>
+            <li>Admin: Ability to add, edit, delete dishes on the menu</li>
+            <li>Admin: View all orders (today's, upcoming & past orders)</li>
+            <li>Admin: Ability to mark order(s) as completed</li>
             <li>Customer: Ability to view menu, place order ahead of time</li>
             <li>Customer receives an email confirming their order details</li>
           </ul>
