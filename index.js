@@ -24,10 +24,12 @@ app.get("/", (req,res)=>{
 app.post("/", (req,res)=>{
 
   const{name,email,message}=req.body;
+  
   //checking for spam messages 
-  if(message.includes("http") || message.includes("bot")){
+  if(message.match(/http|bot|www/i)) {
     return res.render('home2.ejs',{showAlert:true,success:false});
   }
+  
   //send email with message 
   const transporter = nodemailer.createTransport({
     service:'gmail',
